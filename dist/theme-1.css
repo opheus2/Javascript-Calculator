@@ -132,9 +132,9 @@ body {
   display: flex;
   color: #232c43;
   background: #eae3dc;
-  width: 80px;
-  height: 50px;
-  border-radius: 8px;
+  width: 5rem;
+  height: 3.125rem;
+  border-radius: 0.5rem;
   text-align: center;
   font-size: 1.5rem;
   place-content: center;
@@ -225,16 +225,16 @@ body {
 .theme-switch .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   background: #d03f2f;
   margin: 0px -5px 0px 5px;
   cursor: pointer;
 }
 .theme-switch .slider::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   background: #d03f2f;
   margin: 0px -5px 0px 5px;
