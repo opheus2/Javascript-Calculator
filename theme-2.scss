@@ -1,0 +1,255 @@
+$background-color: hsl(0, 0%, 90%);
+$calculator-keypad-background: hsl(0, 5%, 81%);
+$calculator-screen: hsl(0, 0%, 93%);
+$text-primary: hsl(0, 0, 100%);
+$text-black: hsl(0, 0, 0%);
+$text-secondary: hsl(60, 10%, 19%);
+$keypad-equal: hsl(25, 98%, 40%);
+$keypad-equal-shadow: hsl(25, 99%, 27%);
+$keypad-reset: hsl(185, 42%, 37%);
+$keypad-reset-shadow: hsl(185, 58%, 25%);
+$keypad-background: hsl(45, 7%, 89%);
+$keypad-primary-shadow: hsl(35, 11%, 61%);
+$keypad-delete: hsl(185, 42%, 37%);
+$keypad-delete-shadow: hsl(185, 58%, 25%);
+$small: 320px;
+$medium: 720px;
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Spartan', sans-serif;
+}
+
+body {
+    background: $background-color;
+    min-height: 100vh;
+    display: flex;
+    transition: all ease 0.3s;
+}
+
+.container {
+    max-width: 90rem;
+    // min-height: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    @media screen and (max-width: 425px) {
+        max-width: 90vw;
+        // min-height: 70vh;
+        width: 21.875rem;
+        margin: 0 auto;
+    }
+    .calculator {
+        display: grid;
+        grid-template-rows: 3rem 9rem auto;
+        width: 27.1875rem;
+        place-content: center;
+        place-items: center;
+        @media screen and (max-width: 425px) {
+            grid-template-rows: 4rem 7rem auto;
+            width: 100%;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: $text-secondary;
+    width: 100%;
+    font-weight: 700;
+    .title {
+        font-size: 1.5em;
+    }
+    .theme-switch {
+        font-size: .75em;
+    }
+}
+
+.screen {
+    position: relative;
+    color: $text-secondary;
+    input {
+        height: 6.5625rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $calculator-screen;
+        outline: none;
+        font-weight: 700;
+        font-size: 2.25rem;
+        color: $text-secondary;
+        text-align: right;
+        padding: 1.5625rem;
+        border: none;
+        border-radius: .625rem;
+        caret-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        @media screen and (max-width: 425px) {
+            height: 5rem;
+        }
+    }
+    #history {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: .5rem;
+        padding: .625rem;
+        text-align: right;
+    }
+}
+
+.keypad {
+    background: $calculator-keypad-background;
+    display: grid;
+    height: 25rem;
+    width: 100%;
+    padding: 1.5625rem;
+    flex-direction: column;
+    border-radius: .625rem;
+    @media screen and (max-width: 425px) {
+        height: 25rem;
+        padding: .625rem;
+    }
+    .body {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        place-items: center;
+        font-weight: 700;
+        gap: 1.25rem;
+        @media screen and (max-width: 425px) {
+            gap: 0;
+        }
+        .pad {
+            display: flex;
+            color: $text-secondary;
+            background: $keypad-background;
+            width: 80px;
+            height: 50px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5rem;
+            place-content: center;
+            place-items: center;
+            cursor: pointer;
+            -webkit-box-shadow: 0px .25rem 0px 0px $keypad-primary-shadow;
+            box-shadow: 0px .25rem 0px 0px $keypad-primary-shadow;
+            transition: all ease 0.3s;
+            &:hover {
+                background-color: $keypad-primary-shadow;
+                -webkit-box-shadow: 0px .25rem 0px 0px $keypad-background;
+                box-shadow: 0px .25rem 0px 0px $keypad-background;
+            }
+            @media screen and (max-width: 425px) {
+                width: 80%;
+                height: 80%;
+            }
+        }
+        .pad.reset {
+            background: $keypad-reset;
+            color: $text-primary;
+            grid-column: span 2;
+            font-size: 1rem;
+            width: 100%;
+            -webkit-box-shadow: 0px .25rem 0px 0px $keypad-reset-shadow;
+            box-shadow: 0px .25rem 0px 0px $keypad-reset-shadow;
+            &:hover {
+                background-color: $keypad-delete-shadow;
+                -webkit-box-shadow: 0px .25rem 0px 0px $keypad-delete;
+                box-shadow: 0px .25rem 0px 0px $keypad-delete;
+            }
+            @media screen and (max-width: 425px) {
+                width: 90%;
+            }
+        }
+        .pad.equal {
+            background: $keypad-equal;
+            color: $text-primary;
+            grid-column: span 2;
+            font-size: 1rem;
+            width: 100%;
+            -webkit-box-shadow: 0px .25rem 0px 0px $keypad-equal-shadow;
+            box-shadow: 0px .25rem 0px 0px $keypad-equal-shadow;
+            &:hover {
+                background-color: $keypad-equal-shadow;
+                -webkit-box-shadow: 0px .25rem 0px 0px $keypad-equal;
+                box-shadow: 0px .25rem 0px 0px $keypad-equal;
+            }
+            @media screen and (max-width: 425px) {
+                width: 90%;
+            }
+        }
+        .pad.delete {
+            background: $keypad-delete;
+            color: $text-primary;
+            font-size: 1rem;
+            -webkit-box-shadow: 0px .25rem 0px 0px $keypad-delete-shadow;
+            box-shadow: 0px .25rem 0px 0px $keypad-delete-shadow;
+            &:hover {
+                background-color: $keypad-delete-shadow;
+                -webkit-box-shadow: 0px .25rem 0px 0px $keypad-delete;
+                box-shadow: 0px .25rem 0px 0px $keypad-delete;
+            }
+        }
+    }
+}
+
+.theme-switch {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .slider {
+        -webkit-appearance: none;
+        width: 3.4375rem;
+        height: 1.25rem;
+        background: $calculator-keypad-background;
+        border-radius: 1.5625rem;
+        padding-right: .625rem;
+        outline: none;
+    }
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: $keypad-equal;
+        margin: 0px -5px 0px 5px;
+        cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: $keypad-equal;
+        margin: 0px -5px 0px 5px;
+        cursor: pointer;
+    }
+    p {
+        margin-right: 1.25rem;
+        font-size: .625rem;
+    }
+    label {
+        font-size: .625rem;
+        position: absolute;
+        top: -15px;
+        right: 0;
+        letter-spacing: 10px;
+    }
+}

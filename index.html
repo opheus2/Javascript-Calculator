@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Calculator app - Frontend Mentor Challenge</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link id="theme" rel="stylesheet" type="text/css" href="./dist/theme-1.css">
+    <script type="text/javascript" src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <!-- Head -->
+            <div class="header">
+                <div class="title">calc</div>
+                <div class="theme-switch">
+                    <p>THEME</p>
+                    <label>123</label>
+                    <input type="range" min="1" max="3" value="1" class="slider" id="theme-switcher">
+                </div>
+            </div>
+            <!-- Screen -->
+            <div class="screen">
+                <input type="text" class="input" id="input" autofocus="autofocus" disabled>
+                <p id="history"></p>
+            </div>
+            <!-- Keypad -->
+            <div class="keypad">
+                <div class="body">
+                    <div class="pad">7</div>
+                    <div class="pad">8</div>
+                    <div class="pad">9</div>
+                    <div class="pad delete">DEL</div>
+                    <div class="pad">4</div>
+                    <div class="pad">5</div>
+                    <div class="pad">6</div>
+                    <div class="pad addition">+</div>
+                    <div class="pad">1</div>
+                    <div class="pad">2</div>
+                    <div class="pad">3</div>
+                    <div class="pad substraction">-</div>
+                    <div class="pad decimal">.</div>
+                    <div class="pad">0</div>
+                    <div class="pad division">/</div>
+                    <div class="pad multiplication">x</div>
+                    <div class="pad reset">RESET</div>
+                    <div class="pad equal">=</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

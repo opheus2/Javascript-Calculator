@@ -1,0 +1,253 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Spartan", sans-serif;
+}
+
+body {
+  background: #160628;
+  min-height: 100vh;
+  display: flex;
+  transition: all ease 0.3s;
+}
+
+.container {
+  max-width: 90rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+@media screen and (max-width: 425px) {
+  .container {
+    max-width: 90vw;
+    width: 21.875rem;
+    margin: 0 auto;
+  }
+}
+.container .calculator {
+  display: grid;
+  grid-template-rows: 3rem 9rem auto;
+  width: 27.1875rem;
+  place-content: center;
+  place-items: center;
+}
+@media screen and (max-width: 425px) {
+  .container .calculator {
+    grid-template-rows: 4rem 7rem auto;
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  color: #ffe53d;
+  width: 100%;
+  font-weight: 700;
+}
+.header .title {
+  font-size: 1.5em;
+}
+.header .theme-switch {
+  font-size: 0.75em;
+}
+
+.screen {
+  position: relative;
+  color: #ffe53d;
+}
+.screen input {
+  height: 6.5625rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1d0934;
+  outline: none;
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #ffe53d;
+  text-align: right;
+  padding: 1.5625rem;
+  border: none;
+  border-radius: 0.625rem;
+  caret-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+@media screen and (max-width: 425px) {
+  .screen input {
+    height: 5rem;
+  }
+}
+.screen #history {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.5rem;
+  padding: 0.625rem;
+  text-align: right;
+}
+
+.keypad {
+  background: #1d0934;
+  display: grid;
+  height: 25rem;
+  width: 100%;
+  padding: 1.5625rem;
+  flex-direction: column;
+  border-radius: 0.625rem;
+}
+@media screen and (max-width: 425px) {
+  .keypad {
+    height: 25rem;
+    padding: 0.625rem;
+  }
+}
+.keypad .body {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  place-items: center;
+  font-weight: 700;
+  gap: 1.25rem;
+}
+@media screen and (max-width: 425px) {
+  .keypad .body {
+    gap: 0;
+  }
+}
+.keypad .body .pad {
+  display: flex;
+  color: #ffe53d;
+  background: #341c4f;
+  width: 80px;
+  height: 50px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.5rem;
+  place-content: center;
+  place-items: center;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #871c9c;
+  box-shadow: 0px 0.25rem 0px 0px #871c9c;
+  transition: all ease 0.3s;
+}
+.keypad .body .pad:hover {
+  background-color: #871c9c;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #341c4f;
+  box-shadow: 0px 0.25rem 0px 0px #341c4f;
+}
+@media screen and (max-width: 425px) {
+  .keypad .body .pad {
+    width: 80%;
+    height: 80%;
+  }
+}
+.keypad .body .pad.reset {
+  background: #58077d;
+  color: white;
+  grid-column: span 2;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #bc15f4;
+  box-shadow: 0px 0.25rem 0px 0px #bc15f4;
+}
+.keypad .body .pad.reset:hover {
+  background-color: #bc15f4;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #58077d;
+  box-shadow: 0px 0.25rem 0px 0px #58077d;
+}
+@media screen and (max-width: 425px) {
+  .keypad .body .pad.reset {
+    width: 90%;
+  }
+}
+.keypad .body .pad.equal {
+  background: #00e0d1;
+  color: #1b2428;
+  grid-column: span 2;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #6cf9f2;
+  box-shadow: 0px 0.25rem 0px 0px #6cf9f2;
+}
+.keypad .body .pad.equal:hover {
+  background-color: #6cf9f2;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #00e0d1;
+  box-shadow: 0px 0.25rem 0px 0px #00e0d1;
+}
+@media screen and (max-width: 425px) {
+  .keypad .body .pad.equal {
+    width: 90%;
+  }
+}
+.keypad .body .pad.delete {
+  background: #58077d;
+  color: white;
+  font-size: 1rem;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #bc15f4;
+  box-shadow: 0px 0.25rem 0px 0px #bc15f4;
+}
+.keypad .body .pad.delete:hover {
+  background-color: #bc15f4;
+  -webkit-box-shadow: 0px 0.25rem 0px 0px #58077d;
+  box-shadow: 0px 0.25rem 0px 0px #58077d;
+}
+
+.theme-switch {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.theme-switch .slider {
+  -webkit-appearance: none;
+  width: 3.4375rem;
+  height: 1.25rem;
+  background: #1d0934;
+  border-radius: 1.5625rem;
+  padding-right: 0.625rem;
+  outline: none;
+}
+.theme-switch .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00e0d1;
+  margin: 0px -5px 0px 5px;
+  cursor: pointer;
+}
+.theme-switch .slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00e0d1;
+  margin: 0px -5px 0px 5px;
+  cursor: pointer;
+}
+.theme-switch p {
+  margin-right: 1.25rem;
+  font-size: 0.625rem;
+}
+.theme-switch label {
+  font-size: 0.625rem;
+  position: absolute;
+  top: -15px;
+  right: 0;
+  letter-spacing: 10px;
+}
